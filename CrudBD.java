@@ -11,6 +11,7 @@ public class CrudBD {
     
     private CrudBD(){}
     
+    //Construtor do Banco
     public static synchronized CrudBD initBD(){
         String sql = "CREATE TABLE IF NOT EXISTS Contas ("+
                         "id int AUTO_INCREMENT,"+
@@ -32,6 +33,7 @@ public class CrudBD {
         //System.exit(1);
     }
     
+    //Auxiliar de Conexao ao BD
     private Connection connect(){
         Connection c = null;
         
@@ -47,6 +49,7 @@ public class CrudBD {
         return c;
     }
     
+    //Auxiliar de Querrys do BD
     public void update(String sql){
         Statement stmt = null;
         
@@ -63,11 +66,8 @@ public class CrudBD {
         }
         System.out.println("Table updated successfully");
     }
-    
-    public void delete(String sql){
-        
-    }
-    
+      
+    //Auxiliar que sincroniza a lista com o banco
     public Vector<Conta> getListaContas(){
         try{
             Connection con = this.connect();
@@ -111,7 +111,6 @@ public class CrudBD {
     
     public Conta getConta(String c, String s){
         Conta conta = null;
-        //this.getListaContas();        
         
         for(Conta aux : this.getListaContas()){
             if(aux.auth(c, s)){
@@ -121,10 +120,5 @@ public class CrudBD {
         }
         return conta;
     }
-    
-    private void setListaContas(Vector<Conta> ListaContas) {
-        this.ListaContas = ListaContas;
-    }
-    
     
 }

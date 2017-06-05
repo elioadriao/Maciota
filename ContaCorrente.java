@@ -5,17 +5,30 @@
 public class ContaCorrente extends Conta{
 
     public ContaCorrente(String codigo, String senha, double saldo, String variacao) {
-        /*super(codigo, senha, saldo);*/
         this.setCodigo(codigo);
         this.setSenha(senha);
         this.setSaldo(saldo);
         this.setVariacao(variacao);
     }
+    
+    @Override
+    public void doSaque(double s){
+        s += 0.5;
+        
+        if(checkSaldo(s))
+            this.setSaldo(this.getSaldo()-s);
+        else
+            throw new IllegalArgumentException("Valor de Saque Invalido!");
+    }
 
     @Override
-    public void setAnuidade() {
-        this.setSaldo(this.getSaldo()-this.getSaldo()*0.1);
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public double doSaldo() {
+                
+        if(this.checkSaldo(0.1)){
+            this.setSaldo(this.getSaldo()-0.1);
+        }
+        return this.getSaldo();
     }
-    
+
+
 }

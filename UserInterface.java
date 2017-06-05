@@ -20,6 +20,7 @@ public class UserInterface {
     
     private CrudBD COFRE = CrudBD.initBD();
     
+    //Inicia o loop da interface
     public void initUi(){        
         this.alertUi("BEM VINDO!", JOptionPane.INFORMATION_MESSAGE);
         
@@ -40,6 +41,7 @@ public class UserInterface {
         }
     }
     
+    //Inicia a interface de login
     public void logarUi(){
         this.clearFields();
         Object[] txt = {"[Login no Sistema]\n\n",
@@ -63,6 +65,7 @@ public class UserInterface {
         }
     }
     
+    //Inicia a interface de cadastro
     public void criarContaUi(){
         this.clearFields();
         this.alertUi("Preencha Corretamente!", JOptionPane.WARNING_MESSAGE);
@@ -99,6 +102,7 @@ public class UserInterface {
         }
     }
     
+    //Interface do menu principal
     public void menuUi(){   
         this.clearFields();
         Object[] txt = {this.getLabel(),
@@ -144,6 +148,7 @@ public class UserInterface {
         }
     }
     
+    //Loop do sistema, se logado retorna pro menu, senao reinicia
     public void exitUi(){
         int op = JOptionPane.showConfirmDialog(null, 
                 "Deseja Realizar Outra Operação?", 
@@ -175,15 +180,17 @@ public class UserInterface {
         return (contAtiva == null);
     }
     
+    //Pop-up de saldo
     public void saldoUi(){
         DecimalFormat o = new DecimalFormat("R$ #,##0.00");
-        String txt = this.getLabel()+"\n\nSaldo: "+o.format(contAtiva.getSaldo());
+        String txt = this.getLabel()+"\n\nSaldo: "+o.format(contAtiva.doSaldo());
         
         this.alertUi(txt, JOptionPane.INFORMATION_MESSAGE);
         
         this.exitUi();
     }
     
+    //Janela de saque
     public void saqueUi(){
         this.clearFields();
         Object[] txt = {this.getLabel(),
@@ -216,6 +223,7 @@ public class UserInterface {
         }
     }
     
+    //Janela de deposito
     public void depositoUi(){
         this.clearFields();
         Object[] txt = {this.getLabel(),
@@ -241,19 +249,7 @@ public class UserInterface {
         }
     }
     
-    private MaskFormatter maskCodigo(String mask){
-        MaskFormatter m = null;
-   
-        try{
-            m = new MaskFormatter(mask);
-            m.setInvalidCharacters(" ");
-        }catch(Exception e){
-            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
-            // será que cai aqui?
-        }
-        return m;
-    }
-    
+    //Explana a existencia da conta
     public void logarEvent(String cod, String sen){
         Conta aux = COFRE.getConta(cod, sen);
         
@@ -270,6 +266,19 @@ public class UserInterface {
         this.contAtiva = contAtiva;
     }
     
+    private MaskFormatter maskCodigo(String mask){
+        MaskFormatter m = null;
+   
+        try{
+            m = new MaskFormatter(mask);
+            m.setInvalidCharacters(" ");
+        }catch(Exception e){
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            // será que cai aqui?
+        }
+        return m;
+    }
+            
     public void clearFields(){
         this.codField = new JFormattedTextField(this.maskCodigo("##.###-#"));
         this.varField = new JFormattedTextField(this.maskCodigo("#"));

@@ -13,7 +13,7 @@ public abstract class Conta {
         return (this.codigo.equals(c) && this.senha.equals(s));
     }
     
-    public double getSaldo(){
+    protected double getSaldo(){
         return this.saldo;
     }
     
@@ -48,20 +48,15 @@ public abstract class Conta {
             return "Poupança";
     }    
     
-    public void doSaque(double s){
-        if(checkSaldo(s))
-            this.saldo -= s;
-        else
-            throw new IllegalArgumentException("Valor de Saque Invalido!");
+    protected boolean checkSaldo(double s){
+        return this.saldo >= s;
     }
+    
+    public abstract void doSaque(double s);
     
     public void doDeposito(double s){
         this.saldo += s;
     }
-    
-    public boolean checkSaldo(double s){
-        return this.saldo >= s;
-    }
-    
-    public abstract void setAnuidade();
+      
+    public abstract double doSaldo();
 }
