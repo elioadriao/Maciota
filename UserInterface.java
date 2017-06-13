@@ -161,7 +161,9 @@ public class UserInterface {
                 this.initUi();
             else
                 this.menuUi();
-        }        
+        }else{
+            System.exit(0);
+        }       
     }
     
     public void alertUi(String text, int icon){

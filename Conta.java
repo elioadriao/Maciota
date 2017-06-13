@@ -49,7 +49,7 @@ public abstract class Conta {
     }    
     
     protected boolean checkSaldo(double s){
-        return this.saldo >= s;
+        return this.saldo >= s && s > 0;
     }
     
     public abstract void doSaque(double s);
