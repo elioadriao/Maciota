@@ -1,7 +1,9 @@
 /**
  *
- * @author elio
- */
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 public class ContaPoupanca extends Conta{
         
     public ContaPoupanca(String codigo, String senha, double saldo, String variacao) {

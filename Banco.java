@@ -1,7 +1,9 @@
 /**
  *
- * @author elio
- */
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 public class Banco {
 
     public static void main(String[] args) {     

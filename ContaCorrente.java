@@ -1,7 +1,9 @@
 /**
  *
- * @author elio
- */
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 public class ContaCorrente extends Conta{
 
     public ContaCorrente(String codigo, String senha, double saldo, String variacao) {

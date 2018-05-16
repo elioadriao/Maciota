@@ -1,9 +1,12 @@
 /**
  *
- * @author elio
- */
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 public abstract class Conta {
-    
+    // Utiliza o Padrao de Projeto Template Method
+	
     private String codigo;
     private String senha;
     private double saldo;

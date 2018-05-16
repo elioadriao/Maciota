@@ -1,3 +1,9 @@
+/**
+ *
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 import java.text.DecimalFormat;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
@@ -5,11 +11,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
 
-/**
- *
- * @author elio
- */
 public class UserInterface {
+	/** UTILIZA O PADRAO DE PROJETO FAÇADE PARA SIMPLIFICAR A INTERFACE **/
+	
     private final String titulo = "Banco Maciota";
     private Conta contAtiva = null;
     

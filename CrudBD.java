@@ -1,16 +1,19 @@
+/**
+ *
+ * @author elio.adriao
+ * @link https://github.com/elioadriao/Maciota
+ * 
+ **/
 import java.sql.*;
 import java.util.Vector;
 
-/**
- *
- * @author elio
- */
 public class CrudBD {
     private static CrudBD cofre;
     private Vector<Conta> ListaContas = new Vector<Conta>();
     
     private CrudBD(){}
     
+    /** UTILIZA O PADRAO DE PROJETO SINGLETON PARA HAVER UMA UNICA INSTANCIA DO BANCO **/
     //Construtor do Banco
     public static synchronized CrudBD initBD(){
         String sql = "CREATE TABLE IF NOT EXISTS Contas ("+
