@@ -65,13 +65,11 @@ public class AdminWindow {
 		bodyFrame.setLayout(null);
 		
 		Button contasPoupancaButton = new Button(bodyFrame, SWT.NONE);
-		contasPoupancaButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_YELLOW));
 		contasPoupancaButton.setToolTipText("");
 		contasPoupancaButton.setBounds(10, 10, 164, 34);
 		contasPoupancaButton.setText("Contas Poupança");
 		
 		Button contasCorrenteButton = new Button(bodyFrame, SWT.NONE);
-		contasCorrenteButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_GREEN));
 		contasCorrenteButton.setToolTipText("");
 		contasCorrenteButton.setBounds(180, 10, 164, 34);
 		contasCorrenteButton.setText("Contas Correntes");

@@ -101,12 +101,10 @@ public class UserWindow {
 		infoLoginLabel2.setText("Crie uma Nova Conta:");
 		
 		Button logarButton = new Button(loginFrame, SWT.NONE);
-		logarButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_GREEN));
 		logarButton.setBounds(111, 223, 132, 34);
 		logarButton.setText("Logar");
 				
 		Button criarContaButton = new Button(loginFrame, SWT.NONE);
-		criarContaButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_YELLOW));
 		criarContaButton.setBounds(111, 101, 132, 34);
 		criarContaButton.setText("Criar Conta");
 		
@@ -135,24 +133,20 @@ public class UserWindow {
 		
 		Button menuDepositoButton = new Button(subMenuFrame, SWT.NONE);
 		menuDepositoButton.setBounds(10, 10, 314, 34);
-		menuDepositoButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		menuDepositoButton.setToolTipText("Fazer Deposito");
 		menuDepositoButton.setText("Deposito");
 		
 		Button menuSaqueButton = new Button(subMenuFrame, SWT.NONE);
 		menuSaqueButton.setBounds(10, 62, 314, 34);
-		menuSaqueButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		menuSaqueButton.setToolTipText("Fazer Saque");
 		menuSaqueButton.setText("Saque");
 		
 		Button menuSairButton = new Button(subMenuFrame, SWT.NONE);
 		menuSairButton.setBounds(10, 161, 314, 34);
-		menuSairButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_YELLOW));
 		menuSairButton.setToolTipText("Volta ao Menu Inicial");
 		menuSairButton.setText("Sair");
 		
 		Button menuDeleteContaButton = new Button(subMenuFrame, SWT.NONE);
-		menuDeleteContaButton.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
 		menuDeleteContaButton.setToolTipText("Apaga conta do Sistema");
 		menuDeleteContaButton.setBounds(10, 115, 314, 34);
 		menuDeleteContaButton.setText("Excluir Conta");
